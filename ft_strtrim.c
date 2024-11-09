@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:26:43 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 20:28:58 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/09 14:03:19 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	first = 0;
 	last = ft_strlen(s1) - 1;
 	while (s1[first] && checkerr(set, s1[first]))
-	{
 		first++;
-	}
 	while (last >= first && checkerr(set, s1[last]))
-	{
 		last--;
-	}
 	len = last - first + 1;
 	newstr = ft_calloc(len + 1, sizeof(char));
 	if (!newstr)

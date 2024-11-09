@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:39:22 by adechaji          #+#    #+#             */
-/*   Updated: 2024/10/25 21:52:34 by adechaji         ###   ########.fr       */
+/*   Created: 2024/11/09 12:15:56 by adechaji          #+#    #+#             */
+/*   Updated: 2024/11/09 12:16:40 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,25 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
+	char	*h;
+	char	*n;
 
+	h = (char *)haystack;
+	n = (char *)needle;
 	i = 0;
+	j = 0;
 	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+		return (h);
+	while (i < len && h[i])
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && haystack[i + j] && i + j < len)
+		while (h[i + j] == n[j] && n[j] && i + j < len)
 		{
 			j++;
-			if (needle[j] == '\0')
-				return ((char *) haystack + i);
 		}
+		if (n[j] == '\0')
+			return (h + i);
+		j = 0;
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

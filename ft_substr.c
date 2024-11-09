@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 22:55:59 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 18:31:51 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/09 14:05:10 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (start >= slen)
 		return (ft_strdup(""));
 	if (len > slen - start)
-	{
 		len = slen - start;
-	}
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);

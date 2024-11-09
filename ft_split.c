@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:58:21 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 19:49:56 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/09 13:55:21 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,8 @@ char	**ft_split(char const *s, char c)
 	int		cwords;
 	char	**res;
 
-	if (!s || *s == '\0')
-	{
-		res = (char **)malloc(sizeof(char *));
-		if (!res)
-			return (NULL);
-		res[0] = NULL;
-		return (res);
-	}
+	if (!s)
+		return (NULL);
 	cwords = countwords(s, c);
 	res = (char **)malloc(sizeof(char *) * (cwords + 1));
 	if (!res)
@@ -101,21 +95,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (res);
 }
-
-// int main()
-// {
-//    char *str = "dawdagv dhad awhdauw 8w";
-//     char **words = ft_split(str, ' ');
-// 	int i = 0;
-// 	if (words)
-// 	{
-// 		while (words[i])
-// 		{
-// 			printf("split num %d: %s\n", i, words[i]);
-// 			free(words[i]);
-// 			i++;
-// 		}
-// 		free(words);
-// 	}
-//  return 0;
-// }

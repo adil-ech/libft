@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 16:31:04 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 20:17:35 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/09 13:56:59 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		lens2;
 	int		len;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
+	if (!s1)
+		return ((char *)s2);
+	if (!s2)
+		return ((char *)s1);
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
 	len = lens1 + lens2;

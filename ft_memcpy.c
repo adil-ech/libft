@@ -5,28 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 13:46:10 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/01 22:25:05 by adechaji         ###   ########.fr       */
+/*   Created: 2024/11/06 19:10:57 by adechaji          #+#    #+#             */
+/*   Updated: 2024/11/06 21:06:20 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t num)
 {
-	unsigned char		*dsttmp;
-	const unsigned char	*srctmp;
+	size_t			i;
+	unsigned char	*dst_data;
+	unsigned char	*src_data;
 
-	dsttmp = (unsigned char *)dst;
-	srctmp = (const unsigned char *)src;
-	if (dsttmp == NULL && srctmp == NULL)
+	if (!src && !dest)
 		return (NULL);
-	while (n > 0)
+	i = 0;
+	dst_data = (unsigned char *)dest;
+	src_data = (unsigned char *)src;
+	if (dst_data == src_data)
+		return (dst_data);
+	while (i < num)
 	{
-		*dsttmp = *srctmp;
-		dsttmp++;
-		srctmp++;
-		n--;
+		dst_data[i] = src_data[i];
+		i++;
 	}
-	return (dst);
+	return (dst_data);
 }

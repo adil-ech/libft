@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:28:52 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/01 20:05:16 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:33:51 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (ss[i] == (unsigned char)c)
 		{
-			return ((unsigned char *) &ss[i]);
+			return ((void *) &ss[i]);
 		}
 		i++;
 	}

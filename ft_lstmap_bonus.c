@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:18:59 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 17:52:12 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:08:45 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nlst;
 	t_list	*nobj;
+	void	*new;
 
 	nlst = NULL;
-	if (!f || !del || !lst)
+	if (!f || !del)
 		return (NULL);
 	while (lst)
 	{
-		nobj = ft_lstnew(f(lst->content));
+		new = f(lst->content);
+		nobj = ft_lstnew(new);
 		if (!nobj)
 		{
 			ft_lstclear(&nlst, del);
+			free(new);
 			return (NULL);
 		}
 		ft_lstadd_back(&nlst, nobj);

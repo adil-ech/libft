@@ -6,7 +6,7 @@
 /*   By: adechaji <adechaji@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:18:48 by adechaji          #+#    #+#             */
-/*   Updated: 2024/11/04 19:41:06 by adechaji         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:11:11 by adechaji         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-// int main()
-// {
-// 	int fd = open("testfd", O_WRONLY, O_APPEND, 0);
-// 	char str[] = "chi7ja";
-// 	ft_putendl_fd(str, fd);
-// 	printf("%d\n", fd);
-// }
