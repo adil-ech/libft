@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $@
 
 clean:
-	rm -rf $(OBJ) $(BOBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)
