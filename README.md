@@ -10,8 +10,9 @@ Libft is a foundational C library that reimplements a selection of standard C li
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [File Structure](#-file-structure)
-- [Bonus Part](#-bonus-part)
 - [Subject Breakdown](#-subject-breakdown)
+- [License](#-license)
+- [Subject PDF](#-subject-pdf)
 
 ---
 
@@ -33,8 +34,6 @@ This project consists of re-creating common C standard library functions from `<
 - Advanced string manipulation: `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`, `ft_strmapi`, `ft_striteri`
 - File descriptor output: `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
 
----
-
 ### Bonus Functions (Linked List Operations)
 
 - `ft_lstnew` – Create a new list element  
@@ -47,75 +46,89 @@ This project consists of re-creating common C standard library functions from `<
 - `ft_lstiter` – Apply a function to each element  
 - `ft_lstmap` – Map a function over the list into a new one
 
+---
+
 ## ⚙️ Installation
 
 ```bash
 git clone https://github.com/adil-ech/libft
 cd libft
 make
+```
 
-This will generate libft.a, a static library that you can link with your own C programs using:
+This will generate `libft.a`, a static library that you can link with your own C programs using:
 
+```bash
 gcc your_program.c -L. -lft
-            
-            🚀 Usage
-In your project:
+```
 
+---
+
+## 🚀 Usage
+
+In your C file:
+
+```c
 #include "libft.h"
-Then compile with libft.a:
+```
 
+Then compile with:
+
+```bash
 gcc main.c -L. -lft
-Make sure to include libft.h and the compiled static library (libft.a) in your project directory or provide appropriate paths.
+```
 
-##
-📁 File Structure
+Ensure that both `libft.a` and `libft.h` are present in your project directory or properly linked.
 
+---
+
+## 📁 File Structure
+
+```text
 libft/
 ├── ft_*.c            # Libft function implementations
 ├── ft_*.h            # Header files (mostly libft.h)
 ├── Makefile
 └── libft.h           # Main header
+```
 
-📄 Subject Breakdown
+---
 
-✅ Part 1 — Libc Functions
+## 📄 Subject Breakdown
+
+### ✅ Part 1 — Libc Functions
+
 Reimplement standard C functions such as:
 
-isalpha, isdigit, isalnum, isascii, isprint
+- `isalpha`, `isdigit`, `isalnum`, `isascii`, `isprint`  
+- `strlen`, `memset`, `bzero`, `memcpy`, `memmove`, `strlcpy`, `strlcat`, `toupper`, `tolower`  
+- `strchr`, `strrchr`, `strncmp`, `memchr`, `memcmp`  
+- `strnstr`, `atoi`, `calloc`, `strdup`  
 
-strlen, memset, bzero, memcpy, memmove, strlcpy, strlcat, toupper, tolower
+### ✅ Part 2 — Additional Functions
 
-strchr, strrchr, strncmp, memchr, memcmp
-
-strnstr, atoi, calloc, strdup
-
-✅ Part 2 — Additional Functions
 Implement higher-level string and output utilities:
 
-substr, strjoin, strtrim, split
+- `substr`, `strjoin`, `strtrim`, `split`  
+- `itoa`, `strmapi`, `striteri`  
+- `putchar_fd`, `putstr_fd`, `putendl_fd`, `putnbr_fd`  
 
-itoa, strmapi, striteri
+### 🔁 Bonus Part — Linked List Functions
 
-putchar_fd, putstr_fd, putendl_fd, putnbr_fd
+If all mandatory functions pass Moulinette:
 
-🔁 Bonus Part — Linked List Functions
-If you’ve completed all mandatory parts and they pass Moulinette:
+- `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`  
+- `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`  
 
-ft_lstnew
-ft_lstadd_front
-ft_lstsize
-ft_lstlast
-ft_lstadd_back
-ft_lstdelone
-ft_lstclear
-ft_lstiter
-ft_lstmap
+---
 
-📬 License
+## 📬 License
 
-This project is part of the 42 Network curriculum and is subject to their academic integrity policy. You are encouraged to use it as a learning resource only.
+This project is part of the [42 Network](https://42.fr) curriculum and is subject to their academic integrity policy. You are encouraged to use it as a learning resource only.
 
-## 📄 Full Subject PDF
+---
+
+## 📄 Subject PDF
 
 You can read the official 42 Libft subject here:  
 👉 [Libft Subject PDF](./en.subject.pdf)
