@@ -1,3 +1,4 @@
+src="https://github.com/ayogun/42-project-badges/blob/main/badges/libftm.png?raw=true"
 # 🧱 Libft
 
 Libft is a foundational C library that reimplements a selection of standard C library functions. It is often the very first project in the 42 curriculum, aiming to ensure students have a solid understanding of memory handling, string manipulation, and linked lists in C.
